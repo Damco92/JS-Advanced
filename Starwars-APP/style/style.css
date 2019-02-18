@@ -1,0 +1,37 @@
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: none;
+  height: 100%;
+}
+
+#logo {
+  max-width: 200px;
+  max-height: 100px;
+}
+.navbar-nav {
+  font-size: 20px;
+}
+.dropdown-hover .dropdown-menu {
+  display: block !important;
+}
+.text-centered {
+  margin: 0px auto;
+  border-radius: 5px;
+  width: 50%;
+  float: none;
+}
+
+.site-footer {
+  height: 70px;
+}
+.display-none {
+  display: none;
+}
+.site-footer {
+  margin: auto;
+}
+.main-section {
+  min-height: 70%;
+}
