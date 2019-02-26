@@ -22,16 +22,6 @@ body {
   width: 50%;
   float: none;
 }
-
-.site-footer {
-  height: 70px;
-}
 .display-none {
   display: none;
-}
-.site-footer {
-  margin: auto;
-}
-.main-section {
-  min-height: 70%;
 }

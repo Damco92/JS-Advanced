@@ -1,16 +1,9 @@
 class Sship {
-  constructor({
-    name,
-    pilot,
-    fuleTankCapacity,
-    currentLocation,
-    typeOfStarship
-  }) {
+  constructor({ name, pilot, fuleTankCapacity, currentLocation }) {
     this.name = name;
     this.pilot = pilot;
     this.fuleTankCapacity = fuleTankCapacity;
     this.currentLocation = currentLocation;
-    this.typeOfStarship = typeOfStarship;
   }
   startEngins() {
     return `Enginins started!`;
@@ -29,12 +22,11 @@ class Fighter extends Sship {
     pilot,
     fuleTankCapacity,
     currentLocation,
-    typeOfStarship,
     weapons,
     shield,
     NumberOfKills
   }) {
-    super({ name, pilot, fuleTankCapacity, currentLocation, typeOfStarship });
+    super({ name, pilot, fuleTankCapacity, currentLocation });
     this.weapons = weapons;
     this.shield = shield;
     this.NumberOfKills = NumberOfKills;
@@ -56,12 +48,11 @@ class CargoShip extends Sship {
     pilot,
     fuleTankCapacity,
     currentLocation,
-    typeOfStarship,
     cargoCapacity,
     tradingRoutManifest,
     loadingCranes
   }) {
-    super({ name, pilot, fuleTankCapacity, currentLocation, typeOfStarship });
+    super({ name, pilot, fuleTankCapacity, currentLocation });
     this.cargoCapacity = cargoCapacity;
     this.tradingRoutManifest = tradingRoutManifest;
     this.loadingCranes = loadingCranes;

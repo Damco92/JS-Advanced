@@ -20,34 +20,36 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item dropdown ">
-             <a class="dropdown-toggle text-light nav-link text-lg" data-toggle="dropdown" href="#">Starships</a>
+             <a class="dropdown-toggle text-light nav-link text-lg" data-toggle="dropdown" href="#">Create Starships</a>
               <ul class="dropdown-menu">
                 <a href="#"  class="dropdown-item bg-light" id="fighterLink">Fighter Ship</a>
                 <a href="#" class="dropdown-item bg-light" id="cargoLink">Cargo Ship</a>
                 <a href="#" class="dropdown-item bg-light" id="miningLink">Mining Ship</a>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Favorites</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Creeate BattleShip</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-light dropdown-toggle" data-toggle="dropdown" href="#">View BattleShips</a>
+              <ul class="dropdown-menu">
+                <a href="#" class="dropdown-item bg-light" id="showFighters" >Show Fighters</a>
+                <a href="#" class="dropdown-item bg-light" id="showCargo">Show Cargo</a>
+                <a href="#" class="dropdown-item bg-light" id="showMiners">Show Miners</a>
+              </ul>
             </li>
           </ul>
         </div>
       </nav>
-      <form action="" class="text-center bg-secondary mt-5">
+      <form action="" class="text-center  mt-5">
       <div class="container">
           <div class="form-group display-none" id="fighterForm">
             <h3>Fighter Ship</h3>
-            <input type="text" placeholder="Name" id="shipName">
-            <input type="text" placeholder="Pilot" id="pilot" class="d-block m-auto">
-            <input type="number" name="" id="fuel_tank_cappacity" placeholder="Fuel Tank Cappacity">
-            <input type="text" name="current_location" id="currentLocation" placeholder="Current Location" class="d-block m-auto">
+            <input type="text" placeholder="Name" id="fighterShipName">
+            <input type="text" placeholder="Pilot" id="fighterPilot" class="d-block m-auto">
+            <input type="number" name="" id="fighter_fuel_tank_cappacity" placeholder="Fuel Tank Cappacity">
+            <input type="text" name="fighter_current_location" id="currentLocation" placeholder="Current Location" class="d-block m-auto">
             <input type="text" name="weapons" id="weapons" placeholder="Weapons" class="d-block m-auto">
             <input type="text" name="shield" id="shield" placeholder="Shield" class="d-block m-auto">
             <input type="number" name="num_of_kills" id="numOfKills" placeholder="Number of kills" class="d-block m-auto">
-            <button class="btn btn-outline-primary btn-lg text-center my-5">
+            <button class="btn btn-secondary btn-lg text-center my-5" id="fighterBtn">
                 Create Ship
               </button>
           </div>
@@ -55,14 +57,14 @@
         <div class="container">
             <div class="form-group display-none" id="cargoForm">
               <h3>Cargo Ship</h3>
-              <input type="text" placeholder="Name" id="shipName">
-              <input type="text" placeholder="Pilot" id="pilot" class="d-block m-auto">
-              <input type="number" name="" id="fuel_tank_cappacity" placeholder="Fuel Tank Cappacity">
-              <input type="text" name="current_location" id="currentLocation" placeholder="Current Location" class="d-block m-auto">
+              <input type="text" placeholder="Name" id="cargoShipName">
+              <input type="text" placeholder="Pilot" id="cargoPilot" class="d-block m-auto">
+              <input type="number" name="" id="cargo_fuel_tank_cappacity" placeholder="Fuel Tank Cappacity">
+              <input type="text" name="current_location" id="cargoCurrentLocation" placeholder="Current Location" class="d-block m-auto">
               <input type="number" name="Cargo Capacity" id="cargoCapacity" placeholder="Cargo Capacity" class="d-block m-auto">
               <input type="text" name="Traiding Route" id="traidingRoute" placeholder="Traiding Route" class="d-block m-auto">
               <input type="number" name="Loading Cranes" id="loadingCranes" placeholder="Loading Cranes" class="d-block m-auto">
-              <button class="btn btn-outline-primary btn-lg text-center my-5">
+              <button class="btn btn-secondary btn-lg text-center my-5" id="cargoBtn">
                   Create Ship
                 </button>
             </div>
@@ -70,24 +72,29 @@
           <div class="container">
               <div class="form-group display-none" id="minerForm">
                 <h3>Minning Ship</h3>
-                <input type="text" placeholder="Name" id="shipName">
-                <input type="text" placeholder="Pilot" id="pilot" class="d-block m-auto">
-                <input type="number" name="" id="fuel_tank_cappacity" placeholder="Fuel Tank Cappacity">
-                <input type="text" name="current_location" id="currentLocation" placeholder="Current Location" class="d-block m-auto">
+                <input type="text" placeholder="Name" id="minerShipName">
+                <input type="text" placeholder="Pilot" id="minerPilot" class="d-block m-auto">
+                <input type="number" name="" id="miner_fuel_tank_cappacity" placeholder="Fuel Tank Cappacity">
+                <input type="text" name="miner_current_location" id="currentLocation" placeholder="Current Location" class="d-block m-auto">
                 <input type="text" name="Mining Tools" id="miningTools" placeholder="Mining Tools" class="d-block m-auto">
                 <input type="text" name="Mining Types" id="miningTypes" placeholder="Mining Types" class="d-block m-auto">
                 <input type="number" name="Mining storage capacity" id="miningStorageCapacity" placeholder="Minig Storage Capacity" class="d-block m-auto">
-                <button class="btn btn-outline-primary btn-lg text-center my-5">
+                <button class="btn btn-secondary btn-lg text-center my-5" id="miningBtn"> 
                     Create Ship
                   </button>
               </div>
             </div>
       </form>
+      <section class="py-5">
+        <div class="container" id="displayArea">
+          
+        </div>
+      </section>
+      <img src="" alt="">
       
-     
     
      
-
+     
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
