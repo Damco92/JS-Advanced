@@ -1,5 +1,5 @@
-class Sship {
-  constructor({ name, pilot, fuleTankCapacity, currentLocation }) {
+class Ship {
+  constructor(name, pilot, fuleTankCapacity, currentLocation) {
     this.name = name;
     this.pilot = pilot;
     this.fuleTankCapacity = fuleTankCapacity;
@@ -16,8 +16,8 @@ class Sship {
   }
 }
 
-class Fighter extends Sship {
-  constructor({
+class Fighter extends Ship {
+  constructor(
     name,
     pilot,
     fuleTankCapacity,
@@ -25,8 +25,8 @@ class Fighter extends Sship {
     weapons,
     shield,
     NumberOfKills
-  }) {
-    super({ name, pilot, fuleTankCapacity, currentLocation });
+  ) {
+    super(name, pilot, fuleTankCapacity, currentLocation);
     this.weapons = weapons;
     this.shield = shield;
     this.NumberOfKills = NumberOfKills;
@@ -42,8 +42,8 @@ class Fighter extends Sship {
   }
 }
 
-class CargoShip extends Sship {
-  constructor({
+class CargoShip extends Ship {
+  constructor(
     name,
     pilot,
     fuleTankCapacity,
@@ -51,8 +51,8 @@ class CargoShip extends Sship {
     cargoCapacity,
     tradingRoutManifest,
     loadingCranes
-  }) {
-    super({ name, pilot, fuleTankCapacity, currentLocation });
+  ) {
+    super(name, pilot, fuleTankCapacity, currentLocation);
     this.cargoCapacity = cargoCapacity;
     this.tradingRoutManifest = tradingRoutManifest;
     this.loadingCranes = loadingCranes;
@@ -65,18 +65,17 @@ class CargoShip extends Sship {
   }
 }
 
-class MiningShip extends Sship {
-  constructor({
+class MiningShip extends Ship {
+  constructor(
     name,
     pilot,
     fuleTankCapacity,
     currentLocation,
-    typeOfStarship,
     miningTools,
     miningTypes,
     miningStorageCapacity
-  }) {
-    super({ name, pilot, fuleTankCapacity, currentLocation, typeOfStarship });
+  ) {
+    super(name, pilot, fuleTankCapacity, currentLocation);
     this.miningTools = miningTools;
     this.miningTypes = miningTypes;
     this.miningStorageCapacity = miningStorageCapacity;
@@ -88,3 +87,52 @@ class MiningShip extends Sship {
     return `Storage temperature set to ${degree}`;
   }
 }
+
+let fighters = [];
+function createFighter() {
+  let fighterName = $('#fighterShipName').val();
+  let fighterPilot = $('#fighterPilot').val();
+  let fighterFuelTank = $('#fighter_fuel_tank_cappacity').val();
+  let fighterLocation = $('#currentLocation').val();
+  let weapons = $('#weapons').val();
+  let shields = $('#shield').val();
+  let numOfKills = $('#numOfKills').val();
+  fighters.push(
+    new Fighter(
+      fighterName,
+      fighterPilot,
+      fighterFuelTank,
+      fighterLocation,
+      weapons,
+      shields,
+      numOfKills
+    )
+  );
+  console.log(fighters);
+  // return fighters;
+}
+$('#fighterBtn').on('click', function() {
+  createFighter();
+});
+
+const displayFighters = fighters => {
+  let i = 1;
+  for (let fighter of fighters) {
+    $('#displayArea').append(`
+      <div class="row">
+        <div class="col-md-6">
+          <img src="./images/fighter${i}.jpg" alt="fighter${i} image"/>
+        </div>
+        <div class="col-md-6">
+          <p>Name: ${fighter.fighterName} Pilot: ${
+      fighter.fighterPilot
+    } Fuel: ${fighter.fighterFuelTank} Location: ${
+      fighter.fighterLocation
+    } Weapons: ${fighter.weapons}
+          Shields: ${fighter.shields} Num of Kills: ${fighter.numOfKills} 
+          </p>
+        </div>
+      </div>
+  `);
+  }
+};
